@@ -7866,9 +7866,9 @@
                                                ng-model="searchSendAsset"
                                                placeholder="Search Assets, Symbols and IDs">
                                     </div>
-                                </form>
-                                <div class="col-md-12 col-xs-12 p-1 mt-1 asset-dropdown"
-                                     ng-repeat="asset in assetListOwned | filter:searchSendAsset track by $index">
+                                </form> 
+                                <div class="col-md-12 col-xs-12 p-1 mt-1 asset-dropdown ms-new-search-results-grp"
+                                     ng-repeat="asset in assetListOwned | filter:searchSendAsset | filter: {verified: false} track by $index">
                                     <a ng-click="setSendAsset(asset.id)">
                                         <div class="col-md-2 p-0" ng-if="asset.hasImage">
                                             <img ng-if="asset.hasImage"
@@ -7877,16 +7877,35 @@
                                                   class="btn btn-white btn-circle w32 asset-round mt-0">{{asset.symbol}}</span>
                                         </div>
                                         <div class="col">
-                                <span class="fusion-text-14">
-                        {{asset.name}} ({{asset.symbol}})
-                                    <span class="color-Active official-fusion-badge"
-                                          ng-show="asset.verified">                                    <img
-                                                src="./images/verified.svg" height="14px" width="14px"/></span>
-</span>
-                                            <br>
-                                            <span class="small-gray-text max-char inline swap-market-adress">{{formatAddress(asset.contractaddress)}}</span>
-                                            </span>
+                                        <span class="fusion-text-14">{{asset.name}} ({{asset.symbol}})
+                                            <span class="color-Active official-fusion-badge" ng-show="asset.verified">                                    <img
+                                                    src="./images/verified.svg" height="14px" width="14px"/></span>
+                                        </span>
+                                        <br>
+                                        <span class="small-gray-text max-char inline swap-market-adress">{{formatAddress(asset.contractaddress)}}</span>
+                                        </span>
+                                            </div>
+                                    </a>
+                                </div>                               
+                                <div class="ms-new-search-results-title">VERIFIED ASSETS</div>
+                                <div class="col-md-12 col-xs-12 p-1 mt-1 asset-dropdown"
+                                     ng-repeat="asset in assetListOwned | filter:searchSendAsset | filter: {verified: true} track by $index">
+                                    <a ng-click="setSendAsset(asset.id)">
+                                        <div class="col-md-2 p-0" ng-if="asset.hasImage">
+                                            <img ng-if="asset.hasImage"
+                                                 ng-src="images/verifiedassets/{{asset.image}}"/>
+                                            <span ng-if="!asset.hasImage"
+                                                  class="btn btn-white btn-circle w32 asset-round mt-0">{{asset.symbol}}</span>
                                         </div>
+                                        <div class="col">
+                                        <span class="fusion-text-14">{{asset.name}} ({{asset.symbol}})
+                                            <span class="color-Active official-fusion-badge" ng-show="asset.verified">                                    <img
+                                                    src="./images/verified.svg" height="14px" width="14px"/></span>
+                                        </span>
+                                        <br>
+                                        <span class="small-gray-text max-char inline swap-market-adress">{{formatAddress(asset.contractaddress)}}</span>
+                                        </span>
+                                            </div>
                                     </a>
                                 </div>
                             </div>

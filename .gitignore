@@ -1,3 +1,5 @@
+dist/
+chrome-extension/
 .vscode/
 .DS_Store
 .DS_Store?
@@ -10,15 +12,12 @@ Thumbs.db
 node_modules/
 deploy/
 json_relay_node/node_modules/
-dist/node_modules/
 _ens/
 *.zip
 cert.pem
 key.pem
 .idea/
 .vscode/
-dist/
-chrome-extension/
 
 Archive.zip
 
