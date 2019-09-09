@@ -1331,7 +1331,10 @@
 
                     <div class="row summary">
                         <div class="col-md-6">
-                            <div class="table-header">You Send</div>
+                            <div class="table-header">
+                                <img src="images/you-send.svg" class="pr-2">
+                                <span>You Send</span>
+                            </div>
                             <div>
                                 <div><img ng-if="selectedSendHasImage==true"
                                         ng-src="images/verifiedassets/{{selectedSendImage}}"/>
@@ -1339,14 +1342,26 @@
                                 </div>
                                 <div>
                                     <span>{{makeSendAmount}}</span>
-                                    <span>{{assetToSendConfirm}}</span>
-                                    <span ng-show='selectedReceiveVerified'><img src="./images/verified.svg" height="14px" width="14px"/></span>
+                                    <span>{{selectedSendAssetSymbol}}</span>
+                                    <img ng-if="selectedSendVerified" src="./images/verified.svg" height="14px" width="14px"/>
+                                    <img ng-if="!selectedSendVerified" src="./images/unverified.svg" height="16px" width="14px"/>
                                 </div>
-                                <div>{{ToStartTime + "-" + ToEndTime}} </div>
+                                <div>
+                                    <span class="small-gray-text" ng-show="showTimeLockSend">
+                                        <img class="mr-2" src="images/sendtl.svg" width="12px">
+                                        <span ng-show="sendTimeLock == 'scheduled'">{{fromStartTimeString}}
+                                            - ∞ Forever</span>
+                                        <span ng-show="receiveTimeLock == 'daterange'">{{fromStartTimeString}}
+                                            - {{fromEndTimeString}}</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="table-header">You Receive</div>
+                            <div class="table-header">
+                                <img src="images/you-receive.svg" class="pr-2">
+                                <span>You Receive</span>
+                            </div>
                             <div>
                                 <div>
                                     <img ng-if="selectedReceiveHasImage==true"
@@ -1355,17 +1370,26 @@
                                 </div>
                                 <div>
                                     <span>{{makeReceiveAmount}}</span>
-                                    <span>{{assetToReceiveConfirm}}</span>
-                                    <span ng-show='selectedReceiveVerified'><img src="./images/verified.svg" height="14px" width="14px"/></span>
+                                    <span>{{selectedReceiveAssetSymbol}}</span>
+                                    <img ng-if="selectedReceiveVerified" src="./images/verified.svg" height="14px" width="14px"/>
+                                    <img ng-if="!selectedReceiveVerified" src="./images/unverified.svg" height="16px" width="14px"/>
                                 </div>
-                                
+                                <div>
+                                    <span class="small-gray-text" ng-show="showTimeLockReceive">
+                                        <img class="mr-2" src="images/sendtl.svg" width="12px">
+                                        <span ng-show="receiveTimeLock == 'scheduled'">{{toStartTimeString}}
+                                            - ∞ Forever</span>
+                                        <span ng-show="receiveTimeLock == 'daterange'">{{toStartTimeString}}
+                                            - {{toEndTimeString}}</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div>PRICE</div>
-                        <div>{{makeSendAmount}} {{assetToSendConfirm}} : {{makeReceiveAmount}} {{assetToReceiveConfirm}}</div>
+                        <div>{{makeSendAmount}} {{assetToSendConfirm}} : {{makeReceiveAmount}} {{selectedReceiveAssetSymbol}}</div>
                     </div>
                      <div class="row">
                         <div>NUMBER OF FILLS</div>
