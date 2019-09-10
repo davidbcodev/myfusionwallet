@@ -1330,7 +1330,7 @@
                     <p class="description">Please review the following details carefully before making your swap.</p>
 
                     <div class="row summary">
-                        <div class="col-md-6">
+                        <div class="col-md-6 divider">
                             <div class="table-header">
                                 <img src="images/you-send.svg" class="pr-2">
                                 <span>You Send</span>

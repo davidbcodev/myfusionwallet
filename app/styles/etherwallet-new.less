@@ -1953,7 +1953,7 @@ h3{
     border-color: #cfd8dc;
     border-width: 1px;
     border-style: solid;
-    padding: 16px;
+    // padding: 16px;
 
     .table-header {
       color: #263238;
@@ -1961,6 +1961,25 @@ h3{
       font-size: 18px;
       padding: 0px;
       height: 32px;
+      border-bottom: 0.5px solid #cfd8dc;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .divider {
+
+      border: none;
+      border-right-color: #cfd8dc;
+      border-right-width: 1px;
+      border-right-style: solid;
+
+      @media screen and (max-width: 1058px) {
+        border: none;
+        border-bottom-color: #cfd8dc;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+
+      }
     }
   }
 
