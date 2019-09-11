@@ -1386,113 +1386,27 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div>PRICE</div>
-                        <div>{{makeSendAmount}} {{assetToSendConfirm}} : {{makeReceiveAmount}} {{selectedReceiveAssetSymbol}}</div>
-                    </div>
-                     <div class="row">
-                        <div>NUMBER OF FILLS</div>
-                        <div>{{makeMinumumSwap}}</div>
-                    </div>
-                     <div class="row" ng-show="privateAccess == true">
-                        <div>PRIVATELY SENDING TO</div>
-                        <div>{{makeTarges}}</div>
-                    </div>
-                    <div class="row" ng-show="privateAccess !== true">
-                        <div>PUBLIC</div>
-                    </div>
-                     <div class="row">
-                        <div>TRANSACTION FEE</div>
-                        <div>{{'transaction-fee-ph'}}</div>
-                    </div>
-
-                    <div class="row p-2 info-bg pt-3 pb-3 info-bg mt-1">
-                        <div class="col-md-6 small-gray-text">
-                            You will be sending
+                    <div class="price-section">
+                        <div class="row price-row">
+                            <div class="col-md-6 price">PRICE</div>
+                            <div class="col-md-6 price-value">{{makeSendAmount}} {{assetToSendConfirm}} : {{makeReceiveAmount}} {{selectedReceiveAssetSymbol}}</div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="float-right text-right">
-                                <span class="fusion-text-18">{{makeSendAmount}}</span> <span
-                                        class="fusion-text-14">{{assetToSendConfirm}}</span>
-                                        
-                                <span class="color-Active official-fusion-badge">
-                                    <img ng-if="selectedSendVerified" src="./images/verified.svg" height="14px"
-                                             width="14px"/>
-                                        <img ng-if="!selectedSendVerified" src="./images/unverified.svg"
-                                             height="16px" width="14px"/>
-                                </span>
-                                <br>
-                                <span class="small-gray-text" ng-show="showTimeLockSend">
-                                <img class="mr-2" src="images/sendtl.svg" width="12px">
-                                    <span ng-show="sendTimeLock == 'daterange'">{{fromStartTimeString}}
-                                        - {{fromEndTimeString}}</span>
-                                    <span ng-show="sendTimeLock == 'scheduled'">{{fromStartTimeString}}
-                                        - ∞ Forever</span>
-                                </span>
-                            </div>
+                        <div class="row price-row ">
+                            <div class="col-md-6 price">NUMBER OF FILLS</div>
+                            <div class="col-md-6 price-value">{{makeMinumumSwap}}</div>
+                        </div>
+                        <div class="row price-row" ng-show="privateAccess == true">
+                            <div class="col-md-6 price">PRIVATELY SENDING TO</div>
+                            <div class="col-md-6 price-value">{{makeTarges}}</div>
+                        </div>
+                        <div class="row price-row" ng-show="privateAccess !== true">
+                            <div class="col-md-6 price">PUBLIC</div>
+                        </div>
+                        <div class="row price-row">
+                            <div class="col-md-6 price">TRANSACTION FEE</div>
+                            <div class="col-md-6 price-value">{{'transaction_fee_here'}}</div>
                         </div>
                     </div>
-                    <div class="row p-2 info-bg pt-3 pb-3 info-bg mt-1">
-                        <div class="col-md-6 small-gray-text">
-                            You will be receiving
-                        </div>
-                        <div class="col-md-6">
-                            <div class="float-right text-right">
-                                <span class="fusion-text-18">{{makeReceiveAmount}}</span> <span
-                                        class="fusion-text-14">{{assetToReceiveConfirm}}</span> 
-                                        <span class="color-Active official-fusion-badge">
-                                    <img ng-if="selectedReceiveVerified" src="./images/verified.svg" height="14px"
-                                             width="14px"/>
-                                        <img ng-if="!selectedReceiveVerified" src="./images/unverified.svg"
-                                             height="16px" width="14px"/>
-                                </span>
-                                <br>
-                                <span class="small-gray-text" ng-show="showTimeLockReceive">
-                                <img class="mr-2" src="images/sendtl.svg" width="12px">
-                                    <span ng-show="receiveTimeLock == 'scheduled'">{{toStartTimeString}}
-                                        - ∞ Forever</span>
-                                    <span ng-show="receiveTimeLock == 'daterange'">{{toStartTimeString}}
-                                        - {{toEndTimeString}}</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row p-2 pt-3 pb-3 gray-border-bottom">
-                        <div class="col-md-6 small-gray-text">
-                            Swap Rate
-                        </div>
-                        <div class="col-md-6">
-                            <div class="float-right">
-                                <span class="fusion-text-18">{{makeSendSwapRate}}</span> <span
-                                        class="fusion-text-14">{{assetToSendConfirm}}</span>
-                                : <span class="fusion-text-18">1</span> <span
-                                        class="fusion-text-14">{{assetToReceiveConfirm}}</span>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row p-2 pt-3 pb-3 gray-border-bottom">
-                        <div class="col-md-6 small-gray-text">
-                            Number of Fills
-                        </div>
-                        <div class="col-md-6">
-                            <div class="float-right">
-                                <span class="fusion-text-18">{{makeMinumumSwap}}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row p-2 pt-3 pb-3 gray-border-bottom" ng-show="makeTarges != ''">
-                        <div class="col-md-6 small-gray-text">
-                            Available To
-                        </div>
-                        <div class="col-md-6">
-                            <div class="float-right">
-                                {{makeTarges}}
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="row">
                         <div class="col-md-6">
