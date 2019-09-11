@@ -46,10 +46,10 @@
                                       class="btn btn-white btn-circle w32 asset-round mt-0">{{selectedSendAssetSymbol}}</span>
                             </div>
                             <div class="col" click-out="!sendDropDown">
-                                {{selectedSendAsset}} 
-                                <span   
-                                    class="color-Active official-fusion-badge-new "
-                                    ng-show="selectedSendVerified && selectedSendAsset !== 'All Assets'">
+                                {{selectedSendAsset}}
+                                <span
+                                        class="color-Active official-fusion-badge-new "
+                                        ng-show="selectedSendVerified && selectedSendAsset !== 'All Assets'">
                                         <img src="./images/verified.svg" height="14px" width="14px"/>
                                 </span>
                                 <span class="small-gray-text max-char inline swap-market-address">{{formatAddress(selectedSendContract)}}</span>
@@ -404,7 +404,8 @@
                                     <div class="col-md-12 pl-2">
                                         <form class="form-inline">
                                             <div class="form-group">
-                                                <input type="text" ng-model="searchSwapMarket" class="form-control m-0 search-swap-input"
+                                                <input type="text" ng-model="searchSwapMarket"
+                                                       class="form-control m-0 search-swap-input"
                                                        placeholder="Search">
                                             </div>
                                         </form>
@@ -795,21 +796,6 @@
             </section>
         </section>
     </article>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <article class="modal fade bg-white ms-new" id="makeSwap" tabindex="-1">
@@ -854,7 +840,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 pl-2">
-                        
+
                             <div class="col-md-6 col-xs-12 p-0">
                                 <a class="btn btn-secondary custom-dropdown mt-1"
                                    ng-click="sendDropDown2 = !sendDropDown2  && closeAllOtherDropDowns('sendDropDown2')">
@@ -930,9 +916,9 @@
                                     ng-click="showTimeLockSend = !showTimeLockSend"
                                     ng-hide="showTimeLockSend; showExistingTimeLocks"
                             >Time-lock
-                            <div class="float-right text-right">
-                                <img src="images/caret-down-2.svg" class="Group-6">
-                            </div>
+                                <div class="float-right text-right">
+                                    <img src="images/caret-down-2.svg" class="Group-6">
+                                </div>
                             </button>
                             <button class="btn btn-sm btn-primary button-timelock p-2 mt-2"
                                     ng-hide="showTimeLockSend || showExistingTimeLocks || !myActiveTimeLocks[selectedSendContract].length > 0"
@@ -1291,30 +1277,7 @@
         </section>
     </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <article class="modal fade rs-new" id="makeSwapConfirm" tabindex="-1">
+    <article class="modal fade" id="makeSwapConfirm" tabindex="-1">
         <section class="modal-dialog send-asset-dialog">
             <section class="modal-content no-shadow">
                 <article class="block no-shadow" ng-hide="wallet.type=='addressOnly'">
